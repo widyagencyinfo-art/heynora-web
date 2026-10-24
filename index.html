@@ -330,7 +330,11 @@ f.addEventListener('submit', async (e) => {
     const res = await fetch('https://nora.widyagency-info.workers.dev/contacto', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(d) });
     if (!res.ok) throw new Error();
     f.reset(); r.textContent = '¡Hecho! Te escribimos hoy por WhatsApp. 😊';
-  } catch { r.textContent = 'No se ha podido enviar. Inténtalo de nuevo en un momento.'; }
+  } catch {
+    // si el formulario no llega (por ejemplo, un bloqueo de la conexión), que nos escriban por WhatsApp con sus datos
+    const texto = `Hola, quiero ver a Nora. Soy ${d.nombre}, de ${d.negocio} (${d.sector}). Mi WhatsApp: ${d.telefono}`;
+    r.innerHTML = 'No se ha podido enviar desde aquí. <a style="color:#FF6A2B" href="https://wa.me/34624869847?text=' + encodeURIComponent(texto) + '">Escríbenos por WhatsApp</a> y te contestamos hoy.';
+  }
 });
 </script>
 </body>
