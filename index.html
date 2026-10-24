@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hey Nora · Tu empleada de WhatsApp</title>
+<meta name="description" content="Nora es la empleada de WhatsApp para pequeños negocios: contesta al momento las 24 horas, da citas y recupera clientes. Desde 99 € al mes, sin permanencia.">
+<meta name="theme-color" content="#FAF6F0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Hey Nora · Tu empleada de WhatsApp">
+<meta property="og:description" content="Ningún cliente sin respuesta.">
+<meta property="og:image" content="og.png">
+<link rel="preload" href="fuentes/bricolage-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fuentes/instrument-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Bricolage;src:url(fuentes/bricolage-700.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:Instrument;src:url(fuentes/instrument-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Instrument;src:url(fuentes/instrument-600.woff2) format("woff2");font-weight:600;font-display:swap}
+:root{--tinta:#1C2541;--naranja:#FF6A2B;--crema:#FAF6F0;--arena:#EFE5D8;--linea:#0000000f;--suave:#5B6175}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--crema);color:var(--tinta);font-family:Instrument,system-ui,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.c{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.logo{font-family:Bricolage,sans-serif;font-weight:700;letter-spacing:-.035em}
+h2{font-size:clamp(34px,5vw,56px);line-height:1.02;margin-bottom:18px}
+h3{font-size:24px;letter-spacing:-.02em;line-height:1.15;margin-bottom:8px}
+.et{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--naranja);margin-bottom:14px;display:block}
+.sub{font-size:clamp(18px,2vw,21px);color:var(--suave);max-width:680px}
+section{padding:88px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--naranja);color:var(--tinta);font-weight:600;font-size:17px;padding:14px 24px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
+.btn.sec{background:transparent;border:1.5px solid #1C254133}
+.logo{display:inline-flex;align-items:baseline;white-space:nowrap;line-height:1;text-decoration:none;color:var(--tinta)}
+.logo svg{display:inline-block;width:.56em;height:.56em;margin:0 .035em 0 .045em;transform:translateY(.03em)}
+/* cabecera */
+header{position:sticky;top:0;z-index:10;background:#FAF6F0e6;backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+header .c{display:flex;align-items:center;gap:28px;height:68px}
+header .logo{font-size:28px}
+header nav{display:flex;gap:24px;margin-left:auto;font-size:16px}
+header nav a{text-decoration:none;color:var(--suave)}
+header .btn{padding:10px 18px;font-size:15px}
+/* portada */
+.hero{padding:72px 0 88px}
+.hero .c{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;background:var(--arena);padding:8px 16px;border-radius:999px}
+.chip i{width:9px;height:9px;border-radius:50%;background:var(--naranja);animation:latido 2s ease-in-out infinite}
+@keyframes latido{50%{opacity:.35}}
+.hero h1{font-size:clamp(46px,6.2vw,82px);line-height:.96;margin:24px 0 22px}
+.hero h1 span{color:var(--naranja)}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.sellos{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.sellos span{font-size:14px;font-weight:600;border:1px solid #1C254124;border-radius:999px;padding:6px 12px;color:var(--suave)}
+/* móvil con conversación */
+.tel{background:var(--tinta);border-radius:40px;padding:12px;max-width:380px;margin-left:auto;box-shadow:0 30px 60px #1C254126}
+.pant{background:#fff;border-radius:30px;overflow:hidden}
+.pant .top{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--linea)}
+.pant .top b{display:block;font-size:16px} .pant .top small{font-size:13px;color:var(--suave)}
+.chat{padding:18px 14px;display:flex;flex-direction:column;gap:10px;background:var(--crema)}
+.m{max-width:84%;padding:10px 14px 8px;border-radius:18px;font-size:15px;line-height:1.4}
+.m small{display:block;text-align:right;font-size:11px;opacity:.55;margin-top:3px}
+.cli{background:#fff;align-self:flex-start;border-bottom-left-radius:6px;box-shadow:0 1px 0 var(--linea)}
+.nora{background:var(--tinta);color:var(--crema);align-self:flex-end;border-bottom-right-radius:6px}
+.firma{font-size:12px;color:var(--suave);text-align:center;padding:4px 0 2px}
+/* tarjetas */
+.rejilla{display:grid;gap:18px}
+.r3{grid-template-columns:repeat(3,1fr)} .r4{grid-template-columns:repeat(4,1fr)} .r2{grid-template-columns:repeat(2,1fr)}
+.caja{background:#fff;border:1px solid var(--linea);border-radius:24px;padding:28px}
+.caja p{color:var(--suave);font-size:17px}
+.num{font-family:Bricolage,sans-serif;font-weight:700;font-size:15px;width:34px;height:34px;border-radius:50%;background:var(--arena);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.oscura{background:var(--tinta);color:var(--crema)}
+.oscura .sub,.oscura .caja p{color:#C9CCD8}
+.oscura .caja{background:#ffffff0d;border-color:#ffffff1a}
+.lista{list-style:none;display:flex;flex-direction:column;gap:14px}
+.lista li{padding-left:30px;position:relative;font-size:18px}
+.lista li:before{content:'';position:absolute;left:4px;top:10px;width:10px;height:10px;border-radius:50%;background:var(--naranja)}
+.sector{display:flex;align-items:center;gap:14px;font-family:Bricolage,sans-serif;font-weight:700;font-size:21px;letter-spacing:-.02em}
+.sector i{width:12px;height:12px;border-radius:50%;background:var(--naranja);flex:none}
+/* precios */
+.plan{display:flex;flex-direction:column;gap:14px}
+.plan.dest{border:2px solid var(--naranja);position:relative}
+.plan .tag{position:absolute;top:-14px;left:24px;background:var(--naranja);font-size:13px;font-weight:600;padding:4px 12px;border-radius:999px}
+.precio{font-family:Bricolage,sans-serif;font-weight:700;font-size:44px;letter-spacing:-.03em;line-height:1}
+.precio small{font-family:Instrument,sans-serif;font-weight:400;font-size:16px;letter-spacing:0;color:var(--suave)}
+.plan .lista li{font-size:16px}
+.nota{font-size:15px;color:var(--suave);margin-top:20px}
+/* preguntas */
+details{border-bottom:1px solid #1C25411f;padding:20px 0}
+summary{cursor:pointer;font-weight:600;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:'+';color:var(--naranja);font-size:24px;line-height:1}
+details[open] summary:after{content:'–'}
+details p{color:var(--suave);margin-top:10px;max-width:760px}
+/* contacto */
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+label{display:flex;flex-direction:column;gap:6px;font-size:15px;font-weight:600}
+input,select{font:inherit;font-size:17px;padding:14px 16px;border-radius:14px;border:1.5px solid #ffffff2e;background:#ffffff12;color:var(--crema)}
+select option{color:var(--tinta)}
+input::placeholder{color:#C9CCD899}
+.ancho{grid-column:1/3}
+.ok{font-size:15px;color:#C9CCD8;display:flex;flex-direction:row;gap:10px;align-items:flex-start;font-weight:400}
+.ok input{width:auto;margin-top:5px}
+.trampa{position:absolute;left:-9999px}
+#respuesta{grid-column:1/3;font-weight:600;min-height:24px}
+footer{padding:40px 0;font-size:15px;color:var(--suave)}
+footer .c{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+@media (max-width:900px){
+  header nav{display:none}
+  .hero .c{grid-template-columns:1fr;gap:44px}
+  .tel{margin:0 auto}
+  .r3,.r4{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  body{font-size:17px}
+  section{padding:64px 0}
+  .hero{padding:40px 0 64px}
+  header .logo{font-size:24px}
+  header .btn{padding:9px 14px;font-size:14px}
+  .r2,.r3,.r4{grid-template-columns:1fr}
+  h2 br{display:none}
+  .caja{padding:24px}
+  form{grid-template-columns:1fr} .ancho,#respuesta{grid-column:1}
+}
+
+.checks{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.checks li{padding-left:32px;position:relative;font-size:17px}
+.checks li:before{content:'';position:absolute;left:0;top:3px;width:20px;height:20px;border-radius:50%;background:var(--naranja) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%231C2541' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
+.desde{font-weight:600;color:var(--tinta)}
+.letra-peq{font-size:15px;color:var(--suave);margin-top:12px}
+.fundador{background:var(--arena);border-radius:24px;padding:26px 30px;display:flex;flex-wrap:wrap;gap:16px 30px;align-items:center;justify-content:space-between}
+.fundador b{font-family:Bricolage,sans-serif;font-size:24px;letter-spacing:-.02em;display:block}
+.fundador span{color:var(--suave)}
+.mala h3{margin-bottom:14px}
+.mala ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.mala li{padding-left:26px;position:relative;color:var(--suave);font-size:16px}
+.mala li:before{content:'×';position:absolute;left:4px;top:-2px;color:#E0533A;font-weight:700;font-size:20px}
+.oscura .mala li{color:#C9CCD8}
+.bloque{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:56px 0;border-top:1px solid var(--linea)}
+.bloque:first-of-type{border-top:0}
+.bloque.al-reves .texto{order:2}
+.bloque .texto h2{font-size:clamp(30px,4vw,44px)}
+.bloque .texto p.sub{margin-bottom:20px}
+.vista{background:#fff;border:1px solid var(--linea);border-radius:28px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.vista .fila{display:flex;align-items:center;gap:12px;background:var(--crema);border-radius:16px;padding:14px 16px;font-size:16px}
+.vista .fila i{width:10px;height:10px;border-radius:50%;background:var(--naranja);flex:none}
+.vista .fila b{margin-left:auto;font-family:Bricolage,sans-serif;font-size:20px}
+.vista .titulo{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--suave)}
+.flotante{position:fixed;right:18px;bottom:18px;z-index:20;display:flex;align-items:center;gap:10px;background:var(--tinta);color:var(--crema);text-decoration:none;font-weight:600;font-size:16px;padding:10px 18px 10px 10px;border-radius:999px;box-shadow:0 12px 30px #1C254140}
+.flotante svg{width:34px;height:34px}
+@media (max-width:900px){.bloque{grid-template-columns:1fr;gap:28px}.bloque.al-reves .texto{order:0}}
+@media (max-width:600px){.flotante span{display:none}.flotante{padding:10px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="s" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8A4C"/><stop offset="1" stop-color="#FF6A2B"/></linearGradient>
+<symbol id="sonrisa" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="url(#s)"/><path d="M30 52 Q50 74 70 52" fill="none" stroke="#FFFBF6" stroke-width="11" stroke-linecap="round"/><circle cx="66" cy="33" r="8" fill="#FFFBF6"/></symbol></defs></svg>
+
+<header><div class="c">
+  <a class="logo" href="#" aria-label="Hey Nora">hey n<svg><use href="#sonrisa"/></svg>ra</a>
+  <nav><a href="#que-hace">Qué hace</a><a href="#como">Cómo empezar</a><a href="#sectores">Sectores</a><a href="#precios">Precios</a><a href="#preguntas">Preguntas</a></nav>
+  <a class="btn" href="#contacto">Contrata a Nora</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="c">
+  <div>
+    <span class="chip"><i></i>Nora está en línea</span>
+    <h1>Ningún cliente<br><span>sin respuesta.</span></h1>
+    <p class="sub">Nora es la empleada de WhatsApp para pequeños negocios: aprende tu negocio, contesta al momento las 24 horas, da citas y te avisa de todo. <span class="desde">Desde 99 € al mes.</span></p>
+    <ul class="checks">
+      <li>Da citas, contesta las preguntas de siempre y te pasa lo que necesita una persona.</li>
+      <li>Escribe a los clientes que ya no venían para que vuelvan.</li>
+      <li>Sigues con tu número de WhatsApp de siempre. Te la montamos nosotros.</li>
+    </ul>
+    <div class="acciones"><a class="btn" href="#contacto">Contrata a Nora</a><a class="btn sec" href="#que-hace">Mira qué hace</a></div>
+    <p class="letra-peq">Sin permanencia. Lista en una semana. Hecho en Sevilla.</p>
+  </div>
+  <div class="tel" aria-label="Ejemplo de conversación">
+    <div class="pant">
+      <div class="top"><svg width="40" height="40"><use href="#sonrisa"/></svg><div><b>Taller Rafa</b><small>en línea · atendido por Nora</small></div></div>
+      <div class="chat">
+        <div class="m cli">Hola, ¿tenéis hueco el lunes para cambiar el aceite?<small>23:40</small></div>
+        <div class="m nora">¡Hola! Soy Nora, la asistente virtual de Taller Rafa. El lunes tengo hueco a las 8:30 o a las 17:00. ¿Cuál te viene mejor?<small>23:40</small></div>
+        <div class="m cli">A las 8:30. ¿Cuánto es?<small>23:41</small></div>
+        <div class="m nora">Apuntado: lunes a las 8:30. El cambio de aceite y filtro es desde 59 €, según el aceite que lleve. El domingo por la tarde te lo recuerdo 😊<small>23:41</small></div>
+        <div class="firma">Ejemplo de un negocio inventado</div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding:0 0 72px"><div class="c">
+  <div class="fundador"><div><b>Plazas de fundador: los 5 primeros negocios</b><span>Montaje a mitad de precio a cambio de contar tu caso. Solo montamos 4 Noras al mes.</span></div><a class="btn" href="#contacto">Quiero una plaza</a></div>
+</div></section>
+
+<section class="oscura"><div class="c">
+  <span class="et">Hoy</span>
+  <h2>Ahora mismo tienes tres malas opciones <br>con tu WhatsApp.</h2>
+  <div class="rejilla r3" style="margin-top:40px">
+    <div class="caja mala"><h3>Contestarlo todo tú</h3><ul><li>Te interrumpe todo el día</li><li>Contestas tarde y con prisas</li><li>No desconectas ni de noche ni en domingo</li></ul></div>
+    <div class="caja mala"><h3>Dejarlo para luego</h3><ul><li>El cliente pregunta a otro y se va</li><li>Por la noche y el fin de semana no contesta nadie</li><li>A los que ya no vienen nadie les escribe</li></ul></div>
+    <div class="caja mala"><h3>Pagar a alguien solo para eso</h3><ul><li>Un sueldo entero para contestar lo mismo</li><li>Tiene horario, vacaciones y bajas</li><li>Cada uno contesta a su manera</li></ul></div>
+  </div>
+</div></section>
+
+<section><div class="c">
+  <span class="et">Con Nora</span>
+  <h2>Nora se asegura de que nadie <br>se quede sin respuesta.</h2>
+  <div class="rejilla r3" style="margin-top:36px">
+    <div class="caja"><h3>Sabe lo que tú sabes</h3><p>Aprende tus precios, tu horario y tus respuestas, y tú lo revisas todo antes de encenderla.</p></div>
+    <div class="caja"><h3>Está siempre</h3><p>24 horas, 365 días. Contesta en segundos, también a las 23:40 de un domingo.</p></div>
+    <div class="caja"><h3>Por 199 € al mes</h3><p>Citas, recordatorios, clientes que vuelven y el resumen de cada lunes. Con los mensajes de WhatsApp incluidos.</p></div>
+  </div>
+</div></section>
+
+<section id="que-hace" style="padding-top:0"><div class="c">
+  <div class="bloque">
+    <div class="texto"><span class="et">Aprende tu negocio</span><h2>Lista en una semana, no en meses.</h2>
+      <p class="sub">Nora aprende de tu negocio de verdad: tus servicios, tus precios y tu forma de hablar. Desde el primer día contesta bien.</p>
+      <ul class="lista"><li>Aprende de tu web y de tu ficha de Google</li><li>Le damos tus 30 preguntas más frecuentes con tus respuestas</li><li>Se presenta con el nombre de tu negocio</li><li>La pruebas en tu móvil antes de encenderla</li></ul></div>
+    <div class="vista"><span class="titulo">Lo que sabe de Taller Rafa</span><div class="fila"><i></i>Cambio de aceite<b>59 €</b></div><div class="fila"><i></i>Revisión antes de la ITV<b>35 €</b></div><div class="fila"><i></i>Horario<b>8:30-19:30</b></div><div class="fila"><i></i>Chapa y pintura<b>se lo pasa a Rafa</b></div></div>
+  </div>
+  <div class="bloque al-reves">
+    <div class="texto"><span class="et">Atiende y da citas</span><h2>Ningún cliente se va a otro por no contestar.</h2>
+      <p class="sub">Cuando estás trabajando, comiendo o ya has cerrado, los mensajes siguen llegando. Nora contesta todos.</p>
+      <ul class="lista"><li>Pregunta lo que hace falta según lo que quiera el cliente</li><li>Da cita en tu agenda y la recuerda el día antes</li><li>Después pregunta qué tal fue y pide una reseña en Google</li><li>Te pasa lo que necesita una persona, con todo lo hablado</li></ul></div>
+    <div class="vista"><span class="titulo">Esta semana</span><div class="fila"><i></i>Personas que escribieron<b>48</b></div><div class="fila"><i></i>De noche o en fin de semana<b>19</b></div><div class="fila"><i></i>Citas dadas por Nora<b>12</b></div><div class="fila"><i></i>Pasadas a ti<b>3</b></div><span class="titulo" style="text-transform:none;letter-spacing:0;font-weight:400">Ejemplo de resumen de un negocio inventado</span></div>
+  </div>
+  <div class="bloque">
+    <div class="texto"><span class="et">Recupera clientes</span><h2>Los que ya no venían, vuelven.</h2>
+      <p class="sub">Tienes cientos de clientes antiguos en el móvil. Nora les escribe con un buen motivo para volver, sin agobiar.</p>
+      <ul class="lista"><li>A cada uno en su momento, según cuánto hace que no viene</li><li>Con tus novedades y tus ofertas de temporada</li><li>Si no quieren más mensajes, no se les escribe más</li></ul></div>
+    <div class="vista"><span class="titulo">Mensaje de vuelta</span><div class="m nora" style="max-width:100%;align-self:stretch">¡Hola, Marta! Hace tiempo que no te vemos por Peluquería Carmen. Esta semana tenemos hueco el jueves por la tarde para tu tinte. ¿Te lo guardo? 😊</div><span class="titulo" style="text-transform:none;letter-spacing:0;font-weight:400">Ejemplo de un negocio inventado</span></div>
+  </div>
+  <div class="bloque al-reves">
+    <div class="texto"><span class="et">Tú mandas</span><h2>Siempre al tanto, aunque no estés.</h2>
+      <p class="sub">Dejar el WhatsApp a Nora no es perder el control.</p>
+      <ul class="lista"><li>Sigues con tu número y tu app de siempre</li><li>Si escribes tú en una conversación, Nora se calla</li><li>Solo contesta con lo que le das; lo que no sabe, te lo pregunta</li><li>Siempre dice que es una asistente virtual</li><li>Cada lunes te llega el resumen de la semana</li></ul></div>
+    <div class="vista"><span class="titulo">Aviso de Nora</span><div class="fila" style="align-items:flex-start"><svg width="28" height="28" style="flex:none"><use href="#sonrisa"/></svg><span>Un cliente pregunta por un presupuesto de chapa para un Seat Ibiza. Te dejo la conversación y su número.</span></div></div>
+  </div>
+</div></section>
+
+<section id="como" style="background:var(--arena)"><div class="c">
+  <span class="et">Cómo empezar</span>
+  <h2>Nora lista en 3 pasos.</h2>
+  <div class="rejilla r3" style="margin-top:36px">
+    <div class="caja"><span class="num">1</span><h3>Nos cuentas tu negocio</h3><p>Media hora de llamada: tu web, tu ficha de Google, tus precios y las preguntas que más te hacen.</p></div>
+    <div class="caja"><span class="num">2</span><h3>La pruebas</h3><p>En una semana Nora está lista. Le escribes desde tu móvil y, si algo no te gusta, se corrige.</p></div>
+    <div class="caja"><span class="num">3</span><h3>La encendemos</h3><p>En tu número de siempre. Desde ese día, ningún cliente sin respuesta.</p></div>
+  </div>
+</div></section>
+
+<section id="sectores"><div class="c">
+  <span class="et">Para quién</span>
+  <h2>Para negocios que viven del WhatsApp.</h2>
+  <p class="sub">Si te escriben cada día para pedir cita, preguntar precios o saber si tienes hueco, Nora es para ti.</p>
+  <div class="rejilla r3" style="margin-top:36px">
+    <div class="caja sector"><i></i>Talleres</div>
+    <div class="caja sector"><i></i>Centros de estética</div>
+    <div class="caja sector"><i></i>Clínicas, fisios y dentistas</div>
+    <div class="caja sector"><i></i>Peluquerías y barberías</div>
+    <div class="caja sector"><i></i>Inmobiliarias</div>
+    <div class="caja sector"><i></i>Concesionarios</div>
+  </div>
+</div></section>
+
+<section id="precios" style="padding-top:0"><div class="c">
+  <span class="et">Precios</span>
+  <h2>Claro desde el principio.</h2>
+  <p class="sub">Sin permanencia: mes a mes. El montaje se paga en dos mitades, la segunda cuando la ves funcionando con tus datos. Los mensajes que cobra WhatsApp van incluidos.</p>
+  <div class="rejilla r3" style="margin-top:40px;align-items:start">
+    <div class="caja plan"><h3>Contesta</h3><div class="precio">99 €<small> /mes</small></div><p>+ 490 € de montaje</p>
+      <ul class="lista"><li>Contesta al momento, 24 horas</li><li>Recoge lo que quiere el cliente</li><li>Te avisa de lo importante</li><li>Hasta 500 conversaciones al mes</li></ul></div>
+    <div class="caja plan dest"><span class="tag">El más elegido</span><h3>Contesta y agenda</h3><div class="precio">199 €<small> /mes</small></div><p>+ 990 € de montaje</p>
+      <ul class="lista"><li>Todo lo de Contesta</li><li>Da y recuerda citas en tu agenda</li><li>Escribe a los clientes que ya no venían</li><li>Resumen cada lunes</li><li>Hasta 1.500 conversaciones y 300 mensajes a clientes antiguos al mes</li></ul>
+      <a class="btn" href="#contacto">Contrata a Nora</a></div>
+    <div class="caja plan"><h3>Empresa</h3><div class="precio" style="font-size:34px">desde 390 €<small> /mes</small></div><p>+ montaje desde 2.500 €</p>
+      <ul class="lista"><li>Varias sedes o equipo comercial</li><li>Conexión con tu programa de gestión</li><li>Varios números y equipos</li><li>Lo vemos en una llamada</li></ul></div>
+  </div>
+  <p class="nota">Precios sin IVA. Una conversación es todo lo que habla un cliente en un día. Si un mes te vas a pasar, te avisamos antes: son 20 € por cada 500 conversaciones más. Nada de créditos ni de cargos sorpresa.</p>
+</div></section>
+
+<section id="preguntas" style="padding-top:0"><div class="c">
+  <span class="et">Preguntas</span>
+  <h2>Lo que nos preguntan.</h2>
+  <details><summary>¿Tengo que cambiar de número?</summary><p>No. Nora trabaja en tu número de WhatsApp de siempre y tú sigues usando tu app. Si escribes tú en una conversación, ella se aparta.</p></details>
+  <details><summary>¿Y si dice algo que no es?</summary><p>Solo contesta con lo que nos das: tus precios, tus horarios y tus respuestas. Lo que no sabe, te lo pregunta a ti. Antes de encenderla la pruebas con tus preguntas más difíciles.</p></details>
+  <details><summary>Mis clientes quieren hablar con una persona.</summary><p>Nora se presenta como la asistente de tu negocio y te pasa cualquier conversación cuando hace falta. Tú puedes entrar en el chat cuando quieras.</p></details>
+  <details><summary>¿Es como los chatbots de botones?</summary><p>No. No hay menús ni opciones que elegir: entiende lo que le escriben y contesta como lo haría una persona de tu equipo.</p></details>
+  <details><summary>¿En qué se diferencia del asistente que trae WhatsApp?</summary><p>Nora te la dejamos montada con tus precios y tu agenda, la vigilamos cada mes, escribe a tus clientes que ya no venían y te manda el resumen de lo que ha hecho.</p></details>
+  <details><summary>¿Qué pasa si un mes tengo muchísimos mensajes?</summary><p>Te avisamos antes de llegar al límite de tu plan. Si quieres seguir, son 20 € por cada 500 conversaciones más. Nunca te cobramos nada sin avisarte.</p></details>
+  <details><summary>¿Hay permanencia?</summary><p>No, es mes a mes. Puedes darla de baja avisando con 30 días. El montaje no se devuelve.</p></details>
+  <details><summary>¿Cuánto tarda en estar lista?</summary><p>Una semana desde que nos das la información. Tú solo nos dedicas media hora.</p></details>
+</div></section>
+
+<section id="contacto" class="oscura"><div class="c rejilla r2" style="gap:48px;align-items:start">
+  <div>
+    <span class="et">Contrata a Nora</span>
+    <h2>Te enseñamos cómo atendería tu negocio.</h2>
+    <p class="sub">Déjanos tu WhatsApp y te escribimos hoy. Montamos solo 4 Noras al mes para hacerlo bien.</p>
+  </div>
+  <form id="form" novalidate>
+    <label>Tu nombre<input name="nombre" autocomplete="name" required placeholder="Nombre"></label>
+    <label>Tu negocio<input name="negocio" autocomplete="organization" required placeholder="Nombre del negocio"></label>
+    <label>Tu WhatsApp<input name="telefono" type="tel" autocomplete="tel" required placeholder="600 000 000"></label>
+    <label>Tipo de negocio<select name="sector"><option>Taller</option><option>Centro de estética</option><option>Clínica, fisio o dentista</option><option>Peluquería o barbería</option><option>Inmobiliaria</option><option>Concesionario</option><option>Otro</option></select></label>
+    <label class="trampa" aria-hidden="true">No rellenar<input name="web" tabindex="-1" autocomplete="off"></label>
+    <label class="ok ancho"><input type="checkbox" name="acepto" required>Acepto que Hey Nora use estos datos solo para contactarme sobre Nora, como explica la <a href="privacidad/" style="color:#FAF6F0">política de privacidad</a>.</label>
+    <div class="ancho"><button class="btn" type="submit">Quiero ver a Nora</button></div>
+    <div id="respuesta" aria-live="polite"></div>
+  </form>
+</div></section>
+</main>
+<a class="flotante" href="#contacto" aria-label="Escribe a Nora"><svg><use href="#sonrisa"/></svg><span>Escribe a Nora</span></a>
+
+<footer><div class="c">
+  <a class="logo" href="#" style="font-size:24px" aria-label="Hey Nora">hey n<svg><use href="#sonrisa"/></svg>ra</a>
+  <span>Ningún cliente sin respuesta. · Sevilla</span>
+  <span>Hey Nora es un servicio de Darío Pulido Moreno · <a href="privacidad/">Privacidad</a> · <a href="cookies/">Cookies</a></span>
+</div></footer>
+
+<script>
+const f = document.getElementById('form'), r = document.getElementById('respuesta');
+f.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const d = Object.fromEntries(new FormData(f));
+  if (!d.nombre || !d.negocio || !d.telefono) { r.textContent = 'Rellena tu nombre, tu negocio y tu WhatsApp.'; return; }
+  if (!f.acepto.checked) { r.textContent = 'Marca la casilla para que podamos escribirte.'; return; }
+  r.textContent = 'Enviando…';
+  try {
+    const res = await fetch('https://nora.widyagency-info.workers.dev/contacto', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(d) });
+    if (!res.ok) throw new Error();
+    f.reset(); r.textContent = '¡Hecho! Te escribimos hoy por WhatsApp. 😊';
+  } catch { r.textContent = 'No se ha podido enviar. Inténtalo de nuevo en un momento.'; }
+});
+</script>
+</body>
+</html>
