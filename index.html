@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hey Nora · Tu empleada de WhatsApp</title>
-<meta name="description" content="Nora es la empleada de WhatsApp para pequeños negocios: contesta al momento las 24 horas, da citas y recupera clientes. Desde 99 € al mes, sin permanencia.">
+<title>Hey Nora · Recupera el dinero que se te escapa por WhatsApp</title>
+<meta name="description" content="Nora es una asistente de WhatsApp con IA para concesionarios y compraventas: contesta en segundos y da cita, persigue los presupuestos sin respuesta y despierta a los clientes dormidos. Piloto de 30 días.">
 <meta name="theme-color" content="#FAF6F0">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="Hey Nora · Tu empleada de WhatsApp">
-<meta property="og:description" content="Ningún cliente sin respuesta.">
+<meta property="og:title" content="Hey Nora · Recupera el dinero que se te escapa por WhatsApp">
+<meta property="og:description" content="Contesta en segundos, persigue presupuestos y despierta a los clientes dormidos. Para concesionarios y compraventas.">
 <meta property="og:image" content="https://heynora.es/og.png">
 <meta property="og:url" content="https://heynora.es/">
 <meta property="og:type" content="website">
@@ -62,7 +62,7 @@ header nav+.btn{margin-left:0}
 .chip{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;background:#fff;box-shadow:var(--sombra);padding:8px 16px 8px 12px;border-radius:999px}
 .chip i{width:9px;height:9px;border-radius:50%;background:#2BB673;animation:pulso 2s infinite}
 @keyframes pulso{0%{box-shadow:0 0 0 0 #2BB67366}70%{box-shadow:0 0 0 9px #2BB67300}100%{box-shadow:0 0 0 0 #2BB67300}}
-.hero h1{font-size:clamp(44px,7vw,92px);line-height:.95;margin:26px 0 24px}
+.hero h1{font-size:clamp(40px,6vw,80px);line-height:.98;margin:26px 0 24px}
 .hero h1 .ns{color:var(--naranja);position:relative;white-space:nowrap}
 .hero h1 .ns svg{position:absolute;left:0;bottom:-.14em;width:100%;height:.3em}
 .hero h1 .ns svg path{stroke-dasharray:600;stroke-dashoffset:600;animation:trazo 1.4s .7s cubic-bezier(.6,0,.2,1) forwards}
@@ -70,6 +70,7 @@ header nav+.btn{margin-left:0}
 .desde{font-weight:600;color:var(--tinta);white-space:nowrap}
 .checks{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:22px}
 .checks li{padding-left:32px;position:relative;font-size:17px}
+.checks li b{font-weight:600}
 .checks li:before{content:'';position:absolute;left:0;top:3px;width:20px;height:20px;border-radius:50%;background:var(--naranja) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%231C2541' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
 .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .letra-peq{font-size:15px;color:var(--suave);margin-top:16px;display:flex;flex-wrap:wrap;gap:6px 18px}
@@ -185,6 +186,10 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .sector b{font-family:Bricolage,sans-serif;font-size:21px;letter-spacing:-.02em}
 .sector span{color:var(--suave);font-size:15px}
 .sector .ir{font-size:14px;font-weight:600;color:var(--naranja);margin-top:4px}
+.sector.grande{grid-column:1/-1;flex-direction:row;align-items:center;gap:22px;background:var(--tinta);color:var(--crema)}
+.sector.grande span{color:#C9CCD8}.sector.grande .ir{color:var(--naranja);margin:0 0 0 auto;white-space:nowrap}
+.sector.grande b{font-size:26px;display:block;margin-bottom:4px}.sector.grande .ico{flex:none;width:60px;height:60px;font-size:28px;background:#ffffff14}
+.plan.dest .btn{align-self:flex-start;margin-top:6px}
 /* precios */
 .plan{display:flex;flex-direction:column;gap:14px}
 .plan.dest{background:var(--tinta);color:var(--crema);transform:scale(1.03)}
@@ -245,6 +250,7 @@ footer .c{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;ali
   .hero{padding:104px 0 56px}
   header .c{height:64px}header .logo{font-size:24px}header .btn{padding:9px 14px;font-size:14px}
   .r2,.r3{grid-template-columns:1fr}
+  .sector.grande{flex-direction:column;align-items:flex-start}.sector.grande .ir{margin:4px 0 0}
   .caja{padding:24px}
   .etiqueta{display:none}
   .tel{transform:none}
@@ -265,70 +271,78 @@ footer .c{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;ali
 
 <header id="cabecera"><div class="c">
   <a class="logo" href="#" aria-label="Hey Nora">hey n<svg><use href="#sonrisa"/></svg>ra</a>
-  <nav><a href="#pruebala">Pruébala</a><a href="#que-hace">Qué hace</a><a href="#calculadora">Calculadora</a><a href="#precios">Precios</a><a href="#preguntas">Preguntas</a></nav>
-  <a class="btn" href="#contacto">Contrata a Nora</a>
+  <nav><a href="#que-hace">Qué hace</a><a href="#pruebala">Pruébala</a><a href="#calculadora">Calculadora</a><a href="#piloto">Piloto</a><a href="#preguntas">Preguntas</a></nav>
+  <a class="btn" href="#contacto">Pide tu piloto</a>
 </div></header>
 
 <main>
 <section class="hero"><div class="c">
   <div>
-    <span class="chip ap"><i></i>Nora está en línea ahora mismo</span>
-    <h1 class="ap d1">Ningún cliente <span class="ns">sin respuesta.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 80 4, 200 4, 297 12" fill="none" stroke="#FF6A2B" stroke-width="6" stroke-linecap="round" opacity=".35"/></svg></span></h1>
-    <p class="sub ap d2">Nora es la empleada de WhatsApp para pequeños negocios: aprende tu negocio, contesta al momento las 24 horas, da citas y te avisa de todo. <span class="desde">Desde 99 € al mes.</span></p>
+    <span class="chip ap"><i></i>Para concesionarios y compraventas</span>
+    <h1 class="ap d1">Recupera el dinero que se te escapa <span class="ns">por WhatsApp.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 80 4, 200 4, 297 12" fill="none" stroke="#FF6A2B" stroke-width="6" stroke-linecap="round" opacity=".35"/></svg></span></h1>
+    <p class="sub ap d2">Nora es una asistente de WhatsApp con IA que trabaja tus contactos de principio a fin. Hace los tres trabajos para los que nunca hay tiempo:</p>
     <ul class="checks ap d2">
-      <li>Da citas, contesta las preguntas de siempre y te pasa lo que necesita una persona.</li>
-      <li>Escribe a los clientes que ya no venían para que vuelvan.</li>
-      <li>Sigues con tu número de WhatsApp de siempre. Te la montamos nosotros.</li>
+      <li><b>Contesta en segundos y da cita</b> para ver o probar el coche, también de noche y en domingo.</li>
+      <li><b>Persigue los presupuestos</b> que se quedaron sin respuesta.</li>
+      <li><b>Despierta a los clientes dormidos</b>: los que te compraron hace años y los que preguntaron y no volvieron.</li>
     </ul>
-    <div class="acciones ap d3"><a class="btn" href="#contacto">Contrata a Nora <span class="flecha">→</span></a><a class="btn sec" href="#pruebala">Pruébala aquí</a></div>
-    <p class="letra-peq ap d3"><span>Sin permanencia</span><span>Lista en una semana</span><span>Hecho en Sevilla</span></p>
+    <div class="acciones ap d3"><a class="btn" href="#contacto">Pide tu piloto <span class="flecha">→</span></a><a class="btn sec" href="#pruebala">Pruébala aquí</a></div>
+    <p class="letra-peq ap d3"><span>Piloto de 30 días</span><span>Te la montamos nosotros</span><span>Hecho en Sevilla</span></p>
   </div>
   <div class="demo ap d2">
     <div class="pestanas" role="tablist" aria-label="Elige un negocio de ejemplo">
-      <button class="on" data-sector="taller">🔧 Taller</button><button data-sector="estetica">✨ Estética</button><button data-sector="peluqueria">💇 Peluquería</button>
+      <button class="on" data-sector="coches">🚗 Concesionario</button><button data-sector="taller">🔧 Taller</button><button data-sector="estetica">✨ Estética</button>
     </div>
     <div class="tel"><div class="pant">
-      <div class="top"><svg width="40" height="40"><use href="#sonrisa"/></svg><div><b id="demo-nombre">Taller Rafa</b><small>● en línea · atendido por Nora</small></div></div>
+      <div class="top"><svg width="40" height="40"><use href="#sonrisa"/></svg><div><b id="demo-nombre">Automóviles Paco</b><small>● en línea · atendido por Nora</small></div></div>
       <div class="chat" id="demo-chat" aria-live="polite"></div>
       <div class="firma">Ejemplo de un negocio inventado</div>
     </div></div>
-    <div class="etiqueta e1"><span class="ic">⚡</span><div><b>Al momento</b>aunque estés liado</div></div>
+    <div class="etiqueta e1"><span class="ic">⚡</span><div><b>En segundos</b>aunque estés vendiendo</div></div>
     <div class="etiqueta e2"><span class="ic">🌙</span><div><b>De noche</b>y en domingo</div></div>
   </div>
 </div></section>
 
 <div class="cinta" aria-hidden="true"><div class="pista">
-  <span>Talleres</span><span>Centros de estética</span><span>Clínicas</span><span>Fisioterapia</span><span>Dentistas</span><span>Peluquerías</span><span>Barberías</span><span>Inmobiliarias</span><span>Concesionarios</span>
-  <span>Talleres</span><span>Centros de estética</span><span>Clínicas</span><span>Fisioterapia</span><span>Dentistas</span><span>Peluquerías</span><span>Barberías</span><span>Inmobiliarias</span><span>Concesionarios</span>
+  <span>Concesionarios</span><span>Compraventas</span><span>Coches de ocasión</span><span>Motos</span><span>Furgonetas</span><span>Talleres</span><span>Concesionarios</span><span>Compraventas</span>
+  <span>Concesionarios</span><span>Compraventas</span><span>Coches de ocasión</span><span>Motos</span><span>Furgonetas</span><span>Talleres</span><span>Concesionarios</span><span>Compraventas</span>
 </div></div>
 
 <section class="oscura"><div class="c" style="position:relative">
   <span class="et ap">Hoy</span>
-  <h2 class="ap">Ahora mismo tienes tres malas <br>opciones con tu WhatsApp.</h2>
+  <h2 class="ap">Así se te escapan <br>las ventas por WhatsApp.</h2>
   <div class="rejilla r3" style="margin-top:46px">
-    <div class="caja mala ap"><div class="icono">📱<em>27</em></div><h3>Contestarlo todo tú</h3><ul><li>Te interrumpe todo el día</li><li>Contestas tarde y con prisas</li><li>No desconectas ni de noche ni en domingo</li></ul></div>
-    <div class="caja mala ap d1"><div class="icono">⏳<em>9</em></div><h3>Dejarlo para luego</h3><ul><li>El cliente pregunta a otro y se va</li><li>Por la noche y el fin de semana no contesta nadie</li><li>A los que ya no vienen nadie les escribe</li></ul></div>
-    <div class="caja mala ap d2"><div class="icono">💸</div><h3>Pagar a alguien solo para eso</h3><ul><li>Un sueldo entero para contestar lo mismo</li><li>Tiene horario, vacaciones y bajas</li><li>Cada uno contesta a su manera</li></ul></div>
+    <div class="caja mala ap"><div class="icono">📱<em>27</em></div><h3>Contestas tarde</h3><ul><li>Entre venta y venta, los mensajes se acumulan</li><li>De noche y en fin de semana no contesta nadie</li><li>El cliente pregunta en varios sitios y se queda con el que contesta antes</li></ul></div>
+    <div class="caja mala ap d1"><div class="icono">📝<em>9</em></div><h3>Presupuestos en el aire</h3><ul><li>Le das precio y no vuelve a escribir</li><li>Nadie tiene tiempo de volver a preguntarle</li><li>Al mes ya ha comprado en otro sitio</li></ul></div>
+    <div class="caja mala ap d2"><div class="icono">💤</div><h3>Clientes dormidos</h3><ul><li>Cientos de compradores antiguos en el móvil</li><li>Nadie les escribe cuando toca cambiar de coche</li><li>Cada uno de tus comerciales lo lleva a su manera</li></ul></div>
   </div>
 </div></section>
 
-<section id="calculadora"><div class="c">
-  <div class="centro"><span class="et ap">Calculadora</span><h2 class="ap">¿Cuánto te cuesta no contestar?</h2><p class="sub ap">Mueve las barras con los números de tu negocio.</p></div>
-  <div class="calc">
-    <div class="caja mandos ap">
-      <div class="mando"><label for="r-dia">Personas que te escriben al día <output id="o-dia">10</output></label><input type="range" id="r-dia" min="2" max="80" value="10"></div>
-      <div class="mando"><label for="r-fuera">Te escriben cuando no puedes contestar <output id="o-fuera">40 %</output></label><input type="range" id="r-fuera" min="5" max="90" step="5" value="40"></div>
-      <div class="mando"><label for="r-van">De cada 10 que esperan, se van a otro <output id="o-van">3</output></label><input type="range" id="r-van" min="1" max="9" value="3"></div>
-      <div class="mando"><label for="r-ticket">Lo que deja un cliente de media <output id="o-ticket">60 €</output></label><input type="range" id="r-ticket" min="10" max="600" step="10" value="60"></div>
-    </div>
-    <div class="resultado ap d1">
-      <div><p>Al mes se te pueden estar yendo</p><div class="grande" id="res-euros">2.160 €</div><p><span id="res-clientes">36</span> clientes que escribieron y no tuvieron respuesta a tiempo.</p></div>
-      <div class="comparar">
-        <div class="barra"><span>Lo que pierdes</span><i id="b-pierdes" style="width:100%"></i><b id="b-pierdes-t">2.160 €</b></div>
-        <div class="barra n"><span>Nora</span><i id="b-nora" style="width:9%"></i><b>199 €</b></div>
-      </div>
-      <p class="aviso-calc">Cálculo orientativo con los números que pones tú. No es una promesa de resultados.</p>
-    </div>
+<section id="que-hace"><div class="c">
+  <div class="centro"><span class="et ap">Qué hace Nora</span><h2 class="ap">Tres trabajos. <br>Ningún contacto olvidado.</h2></div>
+  <div class="bloque">
+    <div class="texto ap"><span class="et">1 · Contesta y da cita</span><h2>El primero en contestar eres tú.</h2>
+      <p class="sub">Cuando alguien escribe por un coche, Nora le contesta en segundos con los datos de tu stock y le da cita para verlo o probarlo.</p>
+      <ul class="lista"><li>Precio, kilómetros, año y si sigue disponible</li><li>Cita para verlo o probarlo en los huecos que tú le digas</li><li>Recordatorio el día antes para que no falle</li><li>Lo que necesita una persona (financiación, tasación, precio final) te lo pasa con todo lo hablado</li></ul></div>
+    <div class="vista ap d1"><span class="titulo">Tu resumen del lunes</span><div class="fila ent"><i></i>Personas que escribieron<b class="cuenta" data-n="64">0</b></div><div class="fila ent"><i></i>De noche o en fin de semana<b class="cuenta" data-n="23">0</b></div><div class="fila ent"><i></i>Visitas y pruebas dadas<b class="cuenta" data-n="9">0</b></div><div class="fila ent"><i></i>Pasadas a ti<b class="cuenta" data-n="5">0</b></div><span class="pie">Ejemplo de un negocio inventado</span></div>
+  </div>
+  <div class="bloque al-reves">
+    <div class="texto ap"><span class="et">2 · Persigue presupuestos</span><h2>El que dijo «me lo pienso» vuelve a saber de ti.</h2>
+      <p class="sub">Le diste precio y no contestó. Nora le vuelve a escribir en el momento justo, con un motivo para dar el paso.</p>
+      <ul class="lista"><li>A los pocos días, y otra vez si no contesta</li><li>Con algo nuevo: una prueba, una tasación, otro coche parecido</li><li>Si dice que no, se apunta y no se le insiste más</li></ul></div>
+    <div class="vista ap d1"><span class="titulo">Seguimiento · 3 días después</span><div class="m nora" style="max-width:100%">Hola, Javier. Soy Nora, de Automóviles Paco. ¿Pudiste pensar lo del Corolla? Sigue disponible, y si te pasas el sábado Paco te tasa tu Golf en el momento. ¿Te guardo hueco a las 11:00?</div><div class="m cli" style="max-width:70%">Vale, el sábado me paso 👍</div><span class="pie">Ejemplo de un negocio inventado</span></div>
+  </div>
+  <div class="bloque">
+    <div class="texto ap"><span class="et">3 · Despierta a los dormidos</span><h2>Los que te compraron hace años vuelven a pasar por aquí.</h2>
+      <p class="sub">Tienes cientos de clientes antiguos en el móvil. Nora les escribe cuando toca cambiar de coche, sin agobiar.</p>
+      <ul class="lista"><li>A cada uno en su momento, según cuándo compró o preguntó</li><li>Con lo que tengas esa semana: entradas nuevas, tasaciones, ofertas</li><li>Si no quieren más mensajes, no se les escribe más</li></ul></div>
+    <div class="vista ap d1"><span class="titulo">Mensaje a un cliente antiguo</span><div class="m nora" style="max-width:100%">¡Hola, Marta! Hace cuatro años te llevaste el Ibiza de Automóviles Paco. Si estás pensando en cambiarlo, esta semana te tasamos el tuyo sin compromiso. ¿Te cuento qué tenemos?</div><div class="m cli" style="max-width:70%">Pues justo lo estaba pensando…</div><span class="pie">Ejemplo de un negocio inventado</span></div>
+  </div>
+  <div class="bloque al-reves">
+    <div class="texto ap"><span class="et">Tú mandas</span><h2>Siempre al tanto, aunque no estés.</h2>
+      <p class="sub">Dejar el WhatsApp a Nora no es perder el control.</p>
+      <ul class="lista"><li>Aprende tu stock, tus precios y tu forma de hablar</li><li>Solo contesta con lo que le das; lo que no sabe, te lo pregunta</li><li>Puedes entrar en cualquier conversación y apagarla cuando quieras</li><li>Siempre dice que es una asistente virtual</li></ul></div>
+    <div class="vista ap d1"><span class="titulo">Aviso de Nora · ahora</span><div class="fila" style="align-items:flex-start"><svg width="30" height="30" style="flex:none"><use href="#sonrisa"/></svg><span>Un cliente quiere financiar el León y dejar su Golf de 2015. Viene el sábado a las 11:00. Te dejo la conversación y su número.</span></div><span class="pie">Ejemplo de un negocio inventado</span></div>
   </div>
 </div></section>
 
@@ -336,109 +350,94 @@ footer .c{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;ali
   <div>
     <span class="et ap">Pruébala</span>
     <h2 class="ap">Escríbele como si fueras un cliente.</h2>
-    <p class="sub ap">Elige un negocio de ejemplo y pregúntale lo que te preguntan a ti cada día: precios, citas, horarios… Fíjate en lo que hace cuando no sabe algo.</p>
+    <p class="sub ap">Pregúntale lo que te preguntan a ti cada día: qué coches tienes, si se puede probar, si se financia… Fíjate en lo que hace cuando no sabe algo.</p>
     <ul class="lista ap" style="margin-top:24px"><li>Contesta con los datos del negocio, nada inventado</li><li>Da cita en los huecos libres</li><li>Lo que no sabe, se lo pasa al dueño</li></ul>
   </div>
   <div class="ventana ap d1">
-    <div class="top"><svg width="38" height="38"><use href="#sonrisa"/></svg><div><b id="p-nombre">Taller Rafa</b><small>● en línea</small></div>
-      <select id="p-sector" aria-label="Negocio de ejemplo"><option value="taller">Taller</option><option value="estetica">Estética</option><option value="peluqueria">Peluquería</option></select></div>
+    <div class="top"><svg width="38" height="38"><use href="#sonrisa"/></svg><div><b id="p-nombre">Automóviles Paco</b><small>● en línea</small></div>
+      <select id="p-sector" aria-label="Negocio de ejemplo"><option value="coches">Concesionario</option><option value="taller">Taller</option><option value="estetica">Estética</option><option value="peluqueria">Peluquería</option></select></div>
     <div class="chat" id="p-chat" aria-live="polite"></div>
     <div class="chips" id="p-chips"></div>
     <form class="escribir" id="p-form" autocomplete="off"><input id="p-texto" placeholder="Escribe aquí tu pregunta…" aria-label="Tu mensaje" maxlength="200"><button aria-label="Enviar"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M3 12l18-9-7 18-2-7-9-2z" fill="#1C2541"/></svg></button></form>
   </div>
 </div></section>
 
-<section id="que-hace"><div class="c">
-  <div class="centro"><span class="et ap">Qué hace Nora</span><h2 class="ap">Una empleada que no falla <br>ni un mensaje.</h2></div>
-  <div class="bloque">
-    <div class="texto ap"><span class="et">Aprende tu negocio</span><h2>Lista en una semana, no en meses.</h2>
-      <p class="sub">Aprende de tu negocio de verdad: tus servicios, tus precios y tu forma de hablar.</p>
-      <ul class="lista"><li>Aprende de tu web y de tu ficha de Google</li><li>Le damos tus 30 preguntas más frecuentes</li><li>Se presenta con el nombre de tu negocio</li><li>La pruebas en tu móvil antes de encenderla</li></ul></div>
-    <div class="vista ap d1"><span class="titulo">Lo que sabe de Taller Rafa</span><div class="fila ent"><i></i>Cambio de aceite<b>59 €</b></div><div class="fila ent"><i></i>Revisión antes de la ITV<b>35 €</b></div><div class="fila ent"><i></i>Horario<b>8:30-19:30</b></div><div class="fila ent"><i></i>Chapa y pintura<b>lo ve Rafa</b></div><span class="pie">Ejemplo de un negocio inventado</span></div>
-  </div>
-  <div class="bloque al-reves">
-    <div class="texto ap"><span class="et">Atiende y da citas</span><h2>Ningún cliente se va a otro por no contestar.</h2>
-      <p class="sub">Cuando estás trabajando, comiendo o ya has cerrado, los mensajes siguen llegando.</p>
-      <ul class="lista"><li>Pregunta lo que hace falta según lo que quiera el cliente</li><li>Da cita en tu agenda y la recuerda el día antes</li><li>Después pregunta qué tal fue y pide una reseña en Google</li><li>Te pasa lo que necesita una persona, con todo lo hablado</li></ul></div>
-    <div class="vista ap d1"><span class="titulo">Tu resumen del lunes</span><div class="fila ent"><i></i>Personas que escribieron<b class="cuenta" data-n="48">0</b></div><div class="fila ent"><i></i>De noche o en fin de semana<b class="cuenta" data-n="19">0</b></div><div class="fila ent"><i></i>Citas dadas por Nora<b class="cuenta" data-n="12">0</b></div><div class="fila ent"><i></i>Pasadas a ti<b class="cuenta" data-n="3">0</b></div><span class="pie">Ejemplo de un negocio inventado</span></div>
-  </div>
-  <div class="bloque">
-    <div class="texto ap"><span class="et">Recupera clientes</span><h2>Los que ya no venían, vuelven.</h2>
-      <p class="sub">Tienes cientos de clientes antiguos en el móvil. Nora les escribe con un buen motivo para volver, sin agobiar.</p>
-      <ul class="lista"><li>A cada uno en su momento, según cuánto hace que no viene</li><li>Con tus novedades y tus ofertas de temporada</li><li>Si no quieren más mensajes, no se les escribe más</li></ul></div>
-    <div class="vista ap d1"><span class="titulo">Mensaje de vuelta</span><div class="m nora" style="max-width:100%">¡Hola, Marta! Hace tiempo que no te vemos por Peluquería Carmen. Esta semana tenemos hueco el jueves por la tarde para tu tinte. ¿Te lo guardo? 😊</div><div class="m cli" style="max-width:70%">¡Sí! Guárdamelo, porfa 🙌</div><span class="pie">Ejemplo de un negocio inventado</span></div>
-  </div>
-  <div class="bloque al-reves">
-    <div class="texto ap"><span class="et">Tú mandas</span><h2>Siempre al tanto, aunque no estés.</h2>
-      <p class="sub">Dejar el WhatsApp a Nora no es perder el control.</p>
-      <ul class="lista"><li>Sigues con tu número y tu app de siempre</li><li>Si escribes tú en una conversación, Nora se calla</li><li>Solo contesta con lo que le das; lo que no sabe, te lo pregunta</li><li>Siempre dice que es una asistente virtual</li></ul></div>
-    <div class="vista ap d1"><span class="titulo">Aviso de Nora · ahora</span><div class="fila" style="align-items:flex-start"><svg width="30" height="30" style="flex:none"><use href="#sonrisa"/></svg><span>Un cliente pregunta por un presupuesto de chapa para un Seat Ibiza. Te dejo la conversación y su número.</span></div><span class="pie">Ejemplo de un negocio inventado</span></div>
+<section id="calculadora"><div class="c">
+  <div class="centro"><span class="et ap">Calculadora</span><h2 class="ap">¿Cuánto se te escapa al mes?</h2><p class="sub ap">Mueve las barras con los números de tu concesionario.</p></div>
+  <div class="calc">
+    <div class="caja mandos ap">
+      <div class="mando"><label for="r-dia">Contactos que te llegan al mes <output id="o-dia">100</output></label><input type="range" id="r-dia" min="10" max="500" step="10" value="100"></div>
+      <div class="mando"><label for="r-fuera">Se quedan sin respuesta rápida o sin seguimiento <output id="o-fuera">40 %</output></label><input type="range" id="r-fuera" min="5" max="90" step="5" value="40"></div>
+      <div class="mando"><label for="r-van">De cada 100 contactos, compran <output id="o-van">4</output></label><input type="range" id="r-van" min="1" max="15" value="4"></div>
+      <div class="mando"><label for="r-ticket">Lo que te deja cada coche vendido <output id="o-ticket">1.200 €</output></label><input type="range" id="r-ticket" min="200" max="5000" step="100" value="1200"></div>
+    </div>
+    <div class="resultado ap d1">
+      <div><p>Al mes se te pueden estar escapando</p><div class="grande" id="res-euros">1.920 €</div><p><span id="res-clientes">Unas 2 ventas</span> de contactos que no tuvieron respuesta a tiempo o a los que nadie volvió a escribir. Sin contar a los clientes dormidos.</p></div>
+      <p class="aviso-calc">Cálculo orientativo con los números que pones tú. No es una promesa de resultados.</p>
+    </div>
   </div>
 </div></section>
 
 <section style="background:#fff"><div class="c">
-  <div class="centro"><span class="et ap">Cómo empezar</span><h2 class="ap">Nora lista en 3 pasos.</h2></div>
+  <div class="centro"><span class="et ap">Cómo empezar</span><h2 class="ap">Tu piloto en 3 pasos.</h2></div>
   <div class="rejilla r3 pasos" style="margin-top:46px">
-    <div class="caja ap" style="background:var(--crema)"><span class="num">1</span><h3>Nos cuentas tu negocio</h3><p>Media hora de llamada: tu web, tu ficha de Google, tus precios y las preguntas que más te hacen.</p></div>
+    <div class="caja ap" style="background:var(--crema)"><span class="num">1</span><h3>Nos cuentas tu negocio</h3><p>Media hora de llamada: tu stock, tus horarios, cómo das cita y lo que más te preguntan.</p></div>
     <div class="caja ap d1" style="background:var(--crema)"><span class="num">2</span><h3>La pruebas</h3><p>En una semana está lista. Le escribes desde tu móvil y, si algo no te gusta, se corrige.</p></div>
-    <div class="caja ap d2" style="background:var(--crema)"><span class="num">3</span><h3>La encendemos</h3><p>En tu número de siempre. Desde ese día, ningún cliente sin respuesta.</p></div>
+    <div class="caja ap d2" style="background:var(--crema)"><span class="num">3</span><h3>30 días trabajando</h3><p>La encendemos y cada semana ves lo que ha hecho. Al final, decides si sigue.</p></div>
   </div>
 </div></section>
 
-<section id="sectores"><div class="c">
-  <div class="centro"><span class="et ap">Para quién</span><h2 class="ap">Para negocios que viven del WhatsApp.</h2><p class="sub ap">Si te escriben cada día para pedir cita, preguntar precios o saber si tienes hueco, Nora es para ti.</p></div>
+<section id="piloto"><div class="c rejilla r2" style="gap:56px;align-items:center">
+  <div>
+    <span class="et ap">El piloto</span>
+    <h2 class="ap">Primero lo ves funcionando con tus clientes.</h2>
+    <p class="sub ap">Nada de contratos largos para probar. Empezamos con un piloto de 30 días en tu concesionario, con tu stock y tus contactos de verdad, y a precio cerrado desde el primer día.</p>
+    <p class="sub ap" style="margin-top:14px">Solo arrancamos 4 pilotos al mes, para hacerlo bien.</p>
+  </div>
+  <div class="caja plan dest ap d1">
+    <span class="tag">Piloto de 30 días</span>
+    <h3>Todo lo que incluye</h3>
+    <ul class="lista"><li>Nora montada con tu stock, tus precios y tus horarios</li><li>Los tres trabajos: contestar, perseguir presupuestos y despertar a los dormidos</li><li>Ajustes durante todo el piloto</li><li>Resumen cada semana de lo que ha hecho</li><li>Al final, una llamada para ver los números juntos</li></ul>
+    <a class="btn" href="#contacto">Pide tu piloto →</a>
+    <p style="font-size:15px">El precio te lo decimos en la primera llamada, cerrado y sin sorpresas.</p>
+  </div>
+</div></section>
+
+<section id="sectores" style="padding-top:0"><div class="c">
+  <div class="centro"><span class="et ap">Para quién</span><h2 class="ap">Empezamos por los coches.</h2><p class="sub ap">Es donde más dinero se queda por el camino: cada contacto vale mucho y el seguimiento casi siempre se queda sin hacer. Pero Nora sirve a cualquier negocio que viva del WhatsApp.</p></div>
   <div class="rejilla r3" style="margin-top:46px">
+    <a class="caja sector grande ap" href="#pruebala" data-probar="coches"><span class="ico">🚗</span><div><b>Concesionarios y compraventas</b><span>Coches, motos y furgonetas: citas para verlo, seguimiento de presupuestos y clientes de hace años.</span></div><span class="ir">Probar el ejemplo →</span></a>
     <a class="caja sector ap" href="#pruebala" data-probar="taller"><span class="ico">🔧</span><b>Talleres</b><span>Citas de revisión, presupuestos y recogida del coche.</span><span class="ir">Probar el ejemplo →</span></a>
-    <a class="caja sector ap d1" href="#pruebala" data-probar="estetica"><span class="ico">✨</span><b>Centros de estética</b><span>Valoraciones, bonos y recordatorios de cada sesión.</span><span class="ir">Probar el ejemplo →</span></a>
-    <a class="caja sector ap d2" href="#contacto"><span class="ico">🦷</span><b>Clínicas, fisios y dentistas</b><span>Primeras visitas, horarios y que nadie falte a su cita.</span><span class="ir">Pedir el mío →</span></a>
-    <a class="caja sector ap" href="#pruebala" data-probar="peluqueria"><span class="ico">💇</span><b>Peluquerías y barberías</b><span>Huecos libres, precios y clientas que vuelven.</span><span class="ir">Probar el ejemplo →</span></a>
-    <a class="caja sector ap d1" href="#contacto"><span class="ico">🏠</span><b>Inmobiliarias</b><span>Visitas, datos de cada piso y propietarios que quieren vender.</span><span class="ir">Pedir el mío →</span></a>
-    <a class="caja sector ap d2" href="#contacto"><span class="ico">🚗</span><b>Concesionarios</b><span>Citas para ver el coche, tasaciones y clientes de hace años.</span><span class="ir">Pedir el mío →</span></a>
+    <a class="caja sector ap d1" href="#pruebala" data-probar="estetica"><span class="ico">✨</span><b>Clínicas y estética</b><span>Valoraciones, bonos y que nadie falte a su cita.</span><span class="ir">Probar el ejemplo →</span></a>
+    <a class="caja sector ap d2" href="#contacto"><span class="ico">🏠</span><b>Inmobiliarias y otros</b><span>Visitas, propietarios que quieren vender y clientes que no volvieron.</span><span class="ir">Pedir el mío →</span></a>
   </div>
-</div></section>
-
-<section id="precios" style="padding-top:0"><div class="c">
-  <div class="fundador ap"><div><b>Plazas de fundador: los 5 primeros negocios</b><span>Montaje a mitad de precio a cambio de contar tu caso. Solo montamos 4 Noras al mes.</span><div class="plazas"><i></i><i></i><i></i><i></i><i></i><em>5 de 5 libres</em></div></div><a class="btn" href="#contacto">Quiero una plaza →</a></div>
-  <div class="centro"><span class="et ap">Precios</span><h2 class="ap">Claro desde el principio.</h2><p class="sub ap">Sin permanencia. El montaje se paga en dos mitades, la segunda cuando la ves funcionando. Los mensajes que cobra WhatsApp van incluidos.</p></div>
-  <div class="rejilla r3" style="margin-top:50px;align-items:center">
-    <div class="caja plan ap"><h3>Contesta</h3><div class="precio">99 €<small> /mes</small></div><p>+ 490 € de montaje</p>
-      <ul class="lista"><li>Contesta al momento, 24 horas</li><li>Recoge lo que quiere el cliente</li><li>Te avisa de lo importante</li><li>Hasta 500 conversaciones al mes</li></ul>
-      <a class="btn sec" href="#contacto">Empezar</a></div>
-    <div class="caja plan dest ap d1"><span class="tag">El más elegido</span><h3>Contesta y agenda</h3><div class="precio">199 €<small> /mes</small></div><p>+ 990 € de montaje</p>
-      <ul class="lista"><li>Todo lo de Contesta</li><li>Da y recuerda citas en tu agenda</li><li>Escribe a los clientes que ya no venían</li><li>Resumen cada lunes</li><li>Hasta 1.500 conversaciones y 300 mensajes a clientes antiguos al mes</li></ul>
-      <a class="btn" href="#contacto">Contrata a Nora →</a></div>
-    <div class="caja plan ap d2"><h3>Empresa</h3><div class="precio" style="font-size:40px">desde 390 €<small> /mes</small></div><p>+ montaje desde 2.500 €</p>
-      <ul class="lista"><li>Varias sedes o equipo comercial</li><li>Conexión con tu programa de gestión</li><li>Varios números y equipos</li></ul>
-      <a class="btn sec" href="#contacto">Hablemos</a></div>
-  </div>
-  <p class="nota">Precios sin IVA. Una conversación es todo lo que habla un cliente en un día. Si un mes te vas a pasar, te avisamos antes: son 20 € por cada 500 conversaciones más. Nada de créditos ni de cargos sorpresa.</p>
 </div></section>
 
 <section id="preguntas" style="padding-top:20px"><div class="c">
   <div class="centro"><span class="et ap">Preguntas</span><h2 class="ap">Lo que nos preguntan.</h2></div>
   <div class="faq">
-    <details><summary>¿Tengo que cambiar de número?</summary><p>No. Nora trabaja en tu número de WhatsApp de siempre y tú sigues usando tu app. Si escribes tú en una conversación, ella se aparta.</p></details>
-    <details><summary>¿Y si dice algo que no es?</summary><p>Solo contesta con lo que nos das: tus precios, tus horarios y tus respuestas. Lo que no sabe, te lo pregunta a ti. Antes de encenderla la pruebas con tus preguntas más difíciles.</p></details>
+    <details><summary>¿Cuánto cuesta?</summary><p>Empezamos con un piloto de 30 días a precio cerrado. Te lo decimos en la primera llamada, cuando sepamos cuántos contactos te llegan y qué quieres que haga Nora. Sin cargos sorpresa.</p></details>
+    <details><summary>¿Tengo que cambiar de número?</summary><p>No hace falta. Puede ir en el número que ya usas o en uno nuevo solo para anuncios y portales. Lo vemos en la llamada según cómo trabajéis.</p></details>
+    <details><summary>¿Y los contactos de los portales y los anuncios?</summary><p>Todo lo que te llegue por WhatsApp lo atiende Nora. Si parte te llega por correo o por formulario, lo vemos en la llamada y te decimos con claridad qué se puede conectar y qué no.</p></details>
+    <details><summary>¿Y si dice algo que no es?</summary><p>Solo contesta con lo que le das: tu stock, tus precios y tus respuestas. Lo que no sabe, como la financiación o la tasación, te lo pasa a ti. Antes de encenderla la pruebas con tus preguntas más difíciles.</p></details>
     <details><summary>Mis clientes quieren hablar con una persona.</summary><p>Nora se presenta como la asistente de tu negocio y te pasa cualquier conversación cuando hace falta. Tú puedes entrar en el chat cuando quieras.</p></details>
     <details><summary>¿Es como los chatbots de botones?</summary><p>No. No hay menús ni opciones que elegir: entiende lo que le escriben y contesta como lo haría una persona de tu equipo.</p></details>
-    <details><summary>¿En qué se diferencia del asistente que trae WhatsApp?</summary><p>Nora te la dejamos montada con tus precios y tu agenda, la vigilamos cada mes, escribe a tus clientes que ya no venían y te manda el resumen de lo que ha hecho.</p></details>
-    <details><summary>¿Qué pasa si un mes tengo muchísimos mensajes?</summary><p>Te avisamos antes de llegar al límite de tu plan. Si quieres seguir, son 20 € por cada 500 conversaciones más. Nunca te cobramos nada sin avisarte.</p></details>
-    <details><summary>¿Hay permanencia?</summary><p>No, es mes a mes. Puedes darla de baja avisando con 30 días. El montaje no se devuelve.</p></details>
     <details><summary>¿Cuánto tarda en estar lista?</summary><p>Una semana desde que nos das la información. Tú solo nos dedicas media hora.</p></details>
+    <details><summary>¿Solo trabajáis con concesionarios?</summary><p>Ahora mismo nos centramos en concesionarios y compraventas, pero Nora sirve a cualquier negocio que reciba clientes por WhatsApp: talleres, clínicas, inmobiliarias… Escríbenos y te decimos si encaja.</p></details>
   </div>
 </div></section>
 
 <section id="contacto" class="oscura"><div class="c rejilla r2" style="gap:56px;align-items:center;position:relative">
   <div>
-    <span class="et">Contrata a Nora</span>
-    <h2>Te enseñamos cómo atendería tu negocio.</h2>
-    <p class="sub">Déjanos tu WhatsApp y te escribimos hoy. Montamos solo 4 Noras al mes para hacerlo bien.</p>
+    <span class="et">Pide tu piloto</span>
+    <h2>Te enseñamos cómo trabajaría Nora en tu negocio.</h2>
+    <p class="sub">Déjanos tu WhatsApp y te escribimos hoy. Solo arrancamos 4 pilotos al mes.</p>
   </div>
   <form id="form" novalidate>
     <label>Tu nombre<input name="nombre" autocomplete="name" required placeholder="Nombre"></label>
     <label>Tu negocio<input name="negocio" autocomplete="organization" required placeholder="Nombre del negocio"></label>
     <label>Tu WhatsApp<input name="telefono" type="tel" autocomplete="tel" required placeholder="600 000 000"></label>
-    <label>Tipo de negocio<select name="sector"><option>Taller</option><option>Centro de estética</option><option>Clínica, fisio o dentista</option><option>Peluquería o barbería</option><option>Inmobiliaria</option><option>Concesionario</option><option>Otro</option></select></label>
+    <label>Tipo de negocio<select name="sector"><option>Concesionario o compraventa</option><option>Taller</option><option>Clínica o estética</option><option>Peluquería o barbería</option><option>Inmobiliaria</option><option>Otro</option></select></label>
     <label class="trampa" aria-hidden="true">No rellenar<input name="web" tabindex="-1" autocomplete="off"></label>
     <label class="ok ancho"><input type="checkbox" name="acepto" required><span>Acepto que Hey Nora use estos datos solo para contactarme sobre Nora, como explica la <a href="/privacidad" style="color:#FAF6F0">política de privacidad</a>.</span></label>
     <div class="ancho"><button class="btn" type="submit">Quiero ver a Nora →</button></div>
@@ -449,7 +448,7 @@ footer .c{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;ali
 
 <footer><div class="c">
   <a class="logo" href="#" style="font-size:24px" aria-label="Hey Nora">hey n<svg><use href="#sonrisa"/></svg>ra</a>
-  <span>Ningún cliente sin respuesta. · Sevilla</span>
+  <span>El dinero que se te escapa por WhatsApp, de vuelta. · Sevilla</span>
   <span>Hey Nora es un servicio de Darío Pulido Moreno · <a href="/privacidad">Privacidad</a> · <a href="/cookies">Cookies</a></span>
 </div></footer>
 <a class="flotante" href="#pruebala" aria-label="Escribe a Nora"><svg><use href="#sonrisa"/></svg><span>Escribe a Nora</span></a>
@@ -476,8 +475,15 @@ const io = new IntersectionObserver((es) => es.forEach((e) => {
 }), { threshold: .15 });
 document.querySelectorAll('.ap,.vista').forEach((el) => io.observe(el));
 
-// Negocios de ejemplo (inventados), los mismos de la demo de WhatsApp
+// Negocios de ejemplo (inventados)
 const NEG = {
+  coches: { nombre: 'Automóviles Paco', dueno: 'Paco',
+    demo: [['cli', 'Hola, he visto el Seat León de 2019. ¿Sigue disponible?', '23:12'], ['nora', '¡Hola! Soy Nora, la asistente virtual de Automóviles Paco. Sí, sigue disponible: León 1.5 TSI de 2019, 68.000 km, 14.900 €. ¿Quieres venir a verlo o probarlo?', '23:12'], ['cli', 'El sábado por la mañana puedo. ¿Se puede financiar?', '23:13'], ['nora', 'Te apunto el sábado a las 11:00 para verlo y probarlo. La financiación te la estudia Paco en persona: le paso tus datos para que lo tenga preparado 👍', '23:13']],
+    precio: 'Ahora mismo tenemos, por ejemplo: Seat León 1.5 TSI de 2019 con 68.000 km, 14.900 €. Toyota Corolla híbrido de 2020 con 55.000 km, 18.500 €. Dacia Sandero de 2021 con 30.000 km, 11.900 €. Todos revisados, con 12 meses de garantía y la transferencia incluida.',
+    cita: 'Puedes venir a verlo y probarlo el jueves a las 17:30 o el sábado a las 11:00. ¿Cuál te viene mejor?',
+    horario: 'Abrimos de lunes a viernes de 9:30 a 13:30 y de 17:00 a 20:30, y los sábados de 10:00 a 14:00.',
+    donde: 'Estamos en Dos Hermanas, a cinco minutos de la autovía, y hay sitio para aparcar en la puerta.',
+    chips: ['¿Qué coches tenéis?', '¿Puedo probarlo el sábado?', '¿Se puede financiar?', 'Quiero dejar el mío'] },
   taller: { nombre: 'Taller Rafa', dueno: 'Rafa',
     demo: [['cli', 'Hola, ¿tenéis hueco el lunes para cambiar el aceite?', '23:40'], ['nora', '¡Hola! Soy Nora, la asistente virtual de Taller Rafa. El lunes tengo hueco a las 8:30 o a las 17:00. ¿Cuál te viene mejor?', '23:40'], ['cli', 'A las 8:30. ¿Cuánto es?', '23:41'], ['nora', 'Apuntado: lunes a las 8:30. El cambio de aceite y filtro es desde 59 €, según el aceite que lleve. El domingo por la tarde te lo recuerdo 😊', '23:41']],
     precio: 'El cambio de aceite y filtro, desde 59 €. La revisión antes de la ITV, 35 €. Pastillas de freno delanteras, desde 89 € con la mano de obra. La diagnosis con máquina son 30 €, y se descuentan si la reparación se hace aquí.',
@@ -516,8 +522,9 @@ function escribiendo(chat, quien) {
   return d;
 }
 
-// Portada: la conversación se escribe sola y va cambiando de negocio
+// Portada: la conversación se escribe sola y va pasando por las pestañas
 const dchat = $('#demo-chat'); let turno = 0;
+const PESTANAS = [...document.querySelectorAll('.pestanas button')].map((b) => b.dataset.sector);
 async function reproducir(sector) {
   const mio = ++turno;
   document.querySelectorAll('.pestanas button').forEach((b) => b.classList.toggle('on', b.dataset.sector === sector));
@@ -534,19 +541,19 @@ async function reproducir(sector) {
   }
   await esperar(4500);
   if (mio !== turno || lento) return;
-  const orden = Object.keys(NEG); reproducir(orden[(orden.indexOf(sector) + 1) % orden.length]);
+  reproducir(PESTANAS[(PESTANAS.indexOf(sector) + 1) % PESTANAS.length]);
 }
 document.querySelectorAll('.pestanas button').forEach((b) => b.addEventListener('click', () => reproducir(b.dataset.sector)));
-reproducir('taller');
+reproducir('coches');
 
 // Pruébala: respuestas de ejemplo según lo que escriba la persona
 const pchat = $('#p-chat'), pchips = $('#p-chips'), psel = $('#p-sector'); let pturno = 0;
 function contestar(sector, t) {
   const n = NEG[sector], x = t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-  if (/persona|duen|encargad|hablar con|llamar|queja|reclam|chapa|golpe|botox|relleno|boda|novia|evento|alergi|embaraz/.test(x)) return `Eso prefiero que lo vea ${n.dueno}, para no decirte nada mal. Le aviso ahora y te escribe hoy por aquí 👍`;
-  if (/hueco|cita|reserv|valoracion|puedo ir|me apunt/.test(x)) return n.cita;
+  if (/persona|duen|encargad|hablar con|llamar|queja|reclam|chapa|golpe|botox|relleno|boda|novia|evento|alergi|embaraz|financ|tasa|dejar el mio|entregar el mio|rebaja|descuento|ultimo precio/.test(x)) return `Eso prefiero que lo vea ${n.dueno}, para no decirte nada mal. Le aviso ahora y te escribe hoy por aquí 👍`;
+  if (/hueco|cita|reserv|valoracion|puedo ir|me apunt|prob|verlo/.test(x)) return n.cita;
   if (/abr|cerr|horario|hasta que hora|a que hora|domingo|festivo/.test(x)) return n.horario;
-  if (/precio|cuest|cuanto|€|euro|tarifa|itv|laser|corte|tinte|mecha|aceite|freno|limpieza|manicura/.test(x)) return n.precio;
+  if (/precio|cuest|cuanto|€|euro|tarifa|itv|laser|corte|tinte|mecha|aceite|freno|limpieza|manicura|coche|disponib|km|kilomet|garantia|stock/.test(x)) return n.precio;
   if (/manana|lunes|martes|miercoles|jueves|viernes|sabado|cuando/.test(x)) return n.cita;
   if (/donde|direcc|ubica|aparca|llegar|zona/.test(x)) return n.donde;
   if (/gracias|perfecto|genial|vale|ok|guay/.test(x)) return '¡A ti! Aquí estoy para lo que necesites 😊';
@@ -572,21 +579,19 @@ function iniciarPrueba(s) {
 psel.addEventListener('change', () => iniciarPrueba(psel.value));
 $('#p-form').addEventListener('submit', (e) => { e.preventDefault(); const i = $('#p-texto'); preguntar(i.value); i.value = ''; });
 document.querySelectorAll('[data-probar]').forEach((a) => a.addEventListener('click', () => iniciarPrueba(a.dataset.probar)));
-iniciarPrueba('taller');
+iniciarPrueba('coches');
 
 // Calculadora
 const fmt = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-const RANGOS = [['#r-dia', 2, 80], ['#r-fuera', 5, 90], ['#r-van', 1, 9], ['#r-ticket', 10, 600]];
+const RANGOS = [['#r-dia', 10, 500], ['#r-fuera', 5, 90], ['#r-van', 1, 15], ['#r-ticket', 200, 5000]];
 function calcular() {
   RANGOS.forEach(([id, a, b]) => { const r = $(id); r.style.setProperty('--p', ((r.value - a) / (b - a)) * 100 + '%'); });
-  const dia = +$('#r-dia').value, fuera = +$('#r-fuera').value, van = +$('#r-van').value, ticket = +$('#r-ticket').value;
-  $('#o-dia').textContent = dia; $('#o-fuera').textContent = fuera + ' %'; $('#o-van').textContent = van; $('#o-ticket').textContent = ticket + ' €';
-  const clientes = dia * 30 * (fuera / 100) * (van / 10), euros = clientes * ticket;
-  $('#res-euros').textContent = fmt(euros) + ' €'; $('#res-clientes').textContent = fmt(clientes);
-  $('#b-pierdes-t').textContent = fmt(euros) + ' €';
-  const max = Math.max(euros, 199);
-  $('#b-pierdes').style.width = Math.max(3, (euros / max) * 62) + '%';
-  $('#b-nora').style.width = Math.max(3, (199 / max) * 62) + '%';
+  const mes = +$('#r-dia').value, fuera = +$('#r-fuera').value, compran = +$('#r-van').value, ticket = +$('#r-ticket').value;
+  $('#o-dia').textContent = mes; $('#o-fuera').textContent = fuera + ' %'; $('#o-van').textContent = compran; $('#o-ticket').textContent = fmt(ticket) + ' €';
+  const ventas = mes * (fuera / 100) * (compran / 100), euros = ventas * ticket;
+  $('#res-euros').textContent = fmt(euros) + ' €';
+  const nv = Math.round(ventas);
+  $('#res-clientes').textContent = ventas < .5 ? 'Menos de una venta' : nv === 1 ? 'Una venta' : `Unas ${nv} ventas`;
 }
 document.querySelectorAll('input[type=range]').forEach((r) => r.addEventListener('input', calcular)); calcular();
 
